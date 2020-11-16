@@ -1,0 +1,82 @@
+https://repl.it/@danh0989/nhan2matran#main.cpp
+#include <iostream>
+
+using namespace std;
+int main ()
+{	int m,n,a,b;
+	cout<<"Nhap so hang  cua ma tran A:  ";	
+	cin >>m;
+ 
+	cout<<"Nhap vao so cot cua ma tran A :";
+	cin>>n;	
+	float A[m][n];
+	for (int i=0;i<m;i++)
+			{	for(int j=0;j<n;j++)
+				{	cout<<"\n A["<<i+1<<"]"<<"["<<j+1<<"] = ";
+		 			cin>>A[i][j];
+				}
+			}
+
+    for (int i=0;i<m;i++)
+		{
+		cout <<endl;
+			for(int j=0;j<n;j++)
+			{cout<<A[i][j]<<"\t";
+			}
+		}
+    cout<<endl;
+
+	cout <<"Nhap so hang cua ma tran B : ";	
+	cin >>a;
+	cout<<"Nhap so cot cua ma tran B :";
+	cin >>b;
+  float B[a][b],C[m][b];
+	for (int i=0;i<a;i++)
+			{	for(int j=0;j<b;j++)
+				{cout<<"\n B["<<i+1<<"]"<<"["<<j+1<<"] = ";
+		 		 cin>>B[i][j];
+				}
+			}
+
+    for (int i=0;i<a;i++)
+		{
+		cout <<endl;
+			for(int j=0;j<b;j++)
+			{cout<<B[i][j]<<"\t"; 
+			}
+    }
+
+  int s;
+  cout<<endl;
+  if (n==a)
+	{	
+			for (int i=0;i<m;i++)
+			{	
+			  for (int k=0;k<b;k++)
+				{ s=0;					
+				 for(int j=0;j<a;j++)	
+				 {/*cout<<"A["<<i+1<<"]"<<"["<<j+1<<"]=\t"<<A[i][j];
+         cout<<endl;
+         cout<<"B["<<j+1<<"]"<<"["<<k+1<<"]=\t"<<B[j][k];
+         cout<<endl;*/
+            s=s+A[i][j]*B[j][k]; 
+				 }
+				 C[i][k]=s; 
+        }
+			}
+
+		cout <<"Tich cua 2 ma tran vua nhap la : \n";
+		for (int i=0;i<m;i++)
+		{
+		cout <<endl;
+			for(int j=0;j<b;j++)
+			{cout<<C[i][j]<<"\t";
+			}
+		}
+	}
+  
+	else
+	{	cout<<"2 ma tran A va B khong the nhan voi nhau duoc ";
+	}				
+return 0 ;
+}
